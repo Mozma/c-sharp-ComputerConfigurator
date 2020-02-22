@@ -36,7 +36,97 @@ namespace ComputerConfigurator.BL.Controller
             return result;
         }
 
+        public void setPreset(string type)
+        {
+            var parts = new PartController();
 
+            switch (type.ToLower())
+            {
+                case "game":
+                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
+                    CurrentPC.Parts.Processor   = parts.findPrice("processor",   "Max");
+                    CurrentPC.Parts.Memory      = parts.findPrice("memory",      "Max");
+                    CurrentPC.Parts.GPU         = parts.findPrice("gpu",         "Max");
+                    CurrentPC.Parts.Storage     = parts.findPrice("storage",     "Max");
+                    CurrentPC.Parts.PSU         = parts.findPrice("psu",         "Max");
+                    CurrentPC.Parts.Case        = parts.findPrice("case",        "Max");
+
+                    break;
+                case "office":
+                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
+                    CurrentPC.Parts.Processor = parts.findPrice("processor",     "Mean");
+                    CurrentPC.Parts.Memory = parts.findPrice("memory",           "Max");
+                    CurrentPC.Parts.GPU = parts.findPrice("gpu",                 "min");
+                    CurrentPC.Parts.Storage = parts.findPrice("storage",         "Max");
+                    CurrentPC.Parts.PSU = parts.findPrice("psu",                 "Max");
+                    CurrentPC.Parts.Case = parts.findPrice("case",               "mean");
+                    break;
+                case "office":
+                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
+                    CurrentPC.Parts.Processor = parts.findPrice("processor", "Mean");
+                    CurrentPC.Parts.Memory = parts.findPrice("memory", "Max");
+                    CurrentPC.Parts.GPU = parts.findPrice("gpu", "min");
+                    CurrentPC.Parts.Storage = parts.findPrice("storage", "Max");
+                    CurrentPC.Parts.PSU = parts.findPrice("psu", "Max");
+                    CurrentPC.Parts.Case = parts.findPrice("case", "mean");
+                    break;
+                case "office":
+                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
+                    CurrentPC.Parts.Processor = parts.findPrice("processor", "Mean");
+                    CurrentPC.Parts.Memory = parts.findPrice("memory", "Max");
+                    CurrentPC.Parts.GPU = parts.findPrice("gpu", "min");
+                    CurrentPC.Parts.Storage = parts.findPrice("storage", "Max");
+                    CurrentPC.Parts.PSU = parts.findPrice("psu", "Max");
+                    CurrentPC.Parts.Case = parts.findPrice("case", "mean");
+                    break;
+                case "office":
+                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
+                    CurrentPC.Parts.Processor = parts.findPrice("processor", "Mean");
+                    CurrentPC.Parts.Memory = parts.findPrice("memory", "Max");
+                    CurrentPC.Parts.GPU = parts.findPrice("gpu", "min");
+                    CurrentPC.Parts.Storage = parts.findPrice("storage", "Max");
+                    CurrentPC.Parts.PSU = parts.findPrice("psu", "Max");
+                    CurrentPC.Parts.Case = parts.findPrice("case", "mean");D
+                    break;
+            }
+        }
+
+
+
+
+        //public void changePart(string type, string name)
+        //{
+        //    switch (type.ToLower())
+        //    {
+        //       // case "motherboard":
+        //         //   CurrentPC.Parts.Motherboard = changePartTo(name);
+        //           // break;
+
+        //        //case "processor":
+        //        //    processorComboBox.Items.Add(part.Name);
+        //        //    break;
+
+        //        //case "memory":
+        //        //    memoryComboBox.Items.Add(part.Name);
+        //        //    break;
+
+        //        //case "gpu":
+        //        //    GPUComboBox.Items.Add(part.Name);
+        //        //    break;
+
+        //        //case "storage":
+        //        //    storageComboBox.Items.Add(part.Name);
+        //        //    break;
+
+        //        //case "psu":
+        //        //    PSUComboBox.Items.Add(part.Name);
+        //        //    break;
+
+        //        //case "case":
+        //        //    caseComboBox.Items.Add(part.Name);
+        //        //    break;
+        //    }
+        //}
 
         public override string ToString()
         {

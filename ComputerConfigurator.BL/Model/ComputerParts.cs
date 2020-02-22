@@ -17,9 +17,6 @@ namespace ComputerConfigurator.BL.Model
         public Part Storage { get; set; }
         public Part PSU { get; set; }
         public Part Case { get; set; }
-    
-
-        
 
         public ComputerParts()
         {

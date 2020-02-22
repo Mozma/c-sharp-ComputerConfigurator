@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerConfigurator.BL", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerConfigurator.CMD", "ComputerConfigurator.CMD\ComputerConfigurator.CMD.csproj", "{823C490E-F7C7-4B01-85A2-83654EC81E4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerConfigurator.WF", "ComputerConfigurator.WF\ComputerConfigurator.WF.csproj", "{0F8BB282-C83D-461D-A4BD-C181908E0F7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{823C490E-F7C7-4B01-85A2-83654EC81E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{823C490E-F7C7-4B01-85A2-83654EC81E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{823C490E-F7C7-4B01-85A2-83654EC81E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F8BB282-C83D-461D-A4BD-C181908E0F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F8BB282-C83D-461D-A4BD-C181908E0F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F8BB282-C83D-461D-A4BD-C181908E0F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F8BB282-C83D-461D-A4BD-C181908E0F7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

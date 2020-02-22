@@ -42,7 +42,9 @@ namespace ComputerConfigurator.BL.Model
 
         public static List<Part> getList()
         {
-            createNewData();
+            if (parts.Count < 1)
+                createNewData();
+            
             return parts;
         }
 
