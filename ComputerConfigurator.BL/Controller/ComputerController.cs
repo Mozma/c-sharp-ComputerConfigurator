@@ -18,7 +18,16 @@ namespace ComputerConfigurator.BL.Controller
             CurrentPC = new Computer(type, price);
         }
 
+        public void update()
+        {
+            CurrentPC.Price = CurrentPC.Parts.getPrice();
+        }
 
+
+        /// <summary>
+        /// Вывод для консоли.
+        /// </summary>
+        /// <returns></returns>
         public string printFullInfo()
         {
             string result;
@@ -36,97 +45,86 @@ namespace ComputerConfigurator.BL.Controller
             return result;
         }
 
+        /// <summary>
+        /// Выбор деталей комплекта.
+        /// </summary>
+        /// <param name="type">Тип сборки</param>
         public void setPreset(string type)
         {
-            var parts = new PartController();
-
             switch (type.ToLower())
             {
                 case "game":
-                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
-                    CurrentPC.Parts.Processor   = parts.findPrice("processor",   "Max");
-                    CurrentPC.Parts.Memory      = parts.findPrice("memory",      "Max");
-                    CurrentPC.Parts.GPU         = parts.findPrice("gpu",         "Max");
-                    CurrentPC.Parts.Storage     = parts.findPrice("storage",     "Max");
-                    CurrentPC.Parts.PSU         = parts.findPrice("psu",         "Max");
-                    CurrentPC.Parts.Case        = parts.findPrice("case",        "Max");
+                    setAllPice("max", "max", "max", "max", "max", "max", "max");
+                    break;
 
-                    break;
                 case "office":
-                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
-                    CurrentPC.Parts.Processor = parts.findPrice("processor",     "Mean");
-                    CurrentPC.Parts.Memory = parts.findPrice("memory",           "Max");
-                    CurrentPC.Parts.GPU = parts.findPrice("gpu",                 "min");
-                    CurrentPC.Parts.Storage = parts.findPrice("storage",         "Max");
-                    CurrentPC.Parts.PSU = parts.findPrice("psu",                 "Max");
-                    CurrentPC.Parts.Case = parts.findPrice("case",               "mean");
+                    setAllPice("min", "mean", "mean", "mean", "mean", "mean", "min");
                     break;
-                case "office":
-                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
-                    CurrentPC.Parts.Processor = parts.findPrice("processor", "Mean");
-                    CurrentPC.Parts.Memory = parts.findPrice("memory", "Max");
-                    CurrentPC.Parts.GPU = parts.findPrice("gpu", "min");
-                    CurrentPC.Parts.Storage = parts.findPrice("storage", "Max");
-                    CurrentPC.Parts.PSU = parts.findPrice("psu", "Max");
-                    CurrentPC.Parts.Case = parts.findPrice("case", "mean");
+
+                case "home":
+                    setAllPice("mean", "mean", "max", "mean", "max", "mean", "mean");
                     break;
-                case "office":
-                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
-                    CurrentPC.Parts.Processor = parts.findPrice("processor", "Mean");
-                    CurrentPC.Parts.Memory = parts.findPrice("memory", "Max");
-                    CurrentPC.Parts.GPU = parts.findPrice("gpu", "min");
-                    CurrentPC.Parts.Storage = parts.findPrice("storage", "Max");
-                    CurrentPC.Parts.PSU = parts.findPrice("psu", "Max");
-                    CurrentPC.Parts.Case = parts.findPrice("case", "mean");
+
+                case "design":
+                    setAllPice("mean", "max", "max", "max", "mean", "max", "mean");
                     break;
-                case "office":
-                    CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", "Max");
-                    CurrentPC.Parts.Processor = parts.findPrice("processor", "Mean");
-                    CurrentPC.Parts.Memory = parts.findPrice("memory", "Max");
-                    CurrentPC.Parts.GPU = parts.findPrice("gpu", "min");
-                    CurrentPC.Parts.Storage = parts.findPrice("storage", "Max");
-                    CurrentPC.Parts.PSU = parts.findPrice("psu", "Max");
-                    CurrentPC.Parts.Case = parts.findPrice("case", "mean");D
+
+                case "task":
+                    setAllPice("max", "max", "max", "mean", "max", "mean", "min");
+                    break;
+
+                case "forprice":
+                    Price pr = new Price();
+
+                    if (CurrentPC.wantedPrice > pr.HighPrice)
+                    {
+                        setAllPice("max", "max", "max", "max", "max", "max", "max");
+                        break;
+                    }
+                    if (CurrentPC.wantedPrice > pr.MediumHighPrice)
+                    {
+                        setAllPice("meanMax", "meanMax", "meanMax", "meanMax", "meanMax", "meanMax", "meanMax");
+                        break;
+                    }
+                    if (CurrentPC.wantedPrice > pr.MediumPrice)
+                    {
+                        setAllPice("mean", "mean", "mean", "mean", "mean", "mean", "mean");
+                        break;
+                    }
+                    if (CurrentPC.wantedPrice > pr.LowMediumPrice)
+                    {
+                        setAllPice("minMean", "minMean", "minMean", "minMean", "minMean", "minMean", "minMean");
+                        break;
+                    }
+                    if (CurrentPC.wantedPrice > pr.LowPrice)
+                    {
+                        setAllPice("min", "min", "min", "min", "min", "min", "min");
+                        break;
+                    }
+
                     break;
             }
         }
 
+       /// <summary>
+       /// Вспомогательный метод для сборки пресетов.
+       /// </summary>
 
+        private void setAllPice(string motherboard, string processor, string memory, string gpu, string storage, string psu, string caseValue)
+        {
+            var parts = new PartController();
 
+            CurrentPC.Parts.Motherboard = parts.findPrice("motherboard", motherboard);
+            CurrentPC.Parts.Processor   = parts.findPrice("processor",   processor);
+            CurrentPC.Parts.Memory      = parts.findPrice("memory",      memory);
+            CurrentPC.Parts.GPU         = parts.findPrice("gpu",         gpu);
+            CurrentPC.Parts.Storage     = parts.findPrice("storage",     storage);
+            CurrentPC.Parts.PSU         = parts.findPrice("psu",         psu);
+            CurrentPC.Parts.Case        = parts.findPrice("case",        caseValue);
 
-        //public void changePart(string type, string name)
-        //{
-        //    switch (type.ToLower())
-        //    {
-        //       // case "motherboard":
-        //         //   CurrentPC.Parts.Motherboard = changePartTo(name);
-        //           // break;
+            update();
+        }
 
-        //        //case "processor":
-        //        //    processorComboBox.Items.Add(part.Name);
-        //        //    break;
-
-        //        //case "memory":
-        //        //    memoryComboBox.Items.Add(part.Name);
-        //        //    break;
-
-        //        //case "gpu":
-        //        //    GPUComboBox.Items.Add(part.Name);
-        //        //    break;
-
-        //        //case "storage":
-        //        //    storageComboBox.Items.Add(part.Name);
-        //        //    break;
-
-        //        //case "psu":
-        //        //    PSUComboBox.Items.Add(part.Name);
-        //        //    break;
-
-        //        //case "case":
-        //        //    caseComboBox.Items.Add(part.Name);
-        //        //    break;
-        //    }
-        //}
 
         public override string ToString()
         {

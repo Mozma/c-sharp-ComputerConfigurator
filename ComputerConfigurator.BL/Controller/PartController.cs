@@ -39,6 +39,24 @@ namespace ComputerConfigurator.BL.Controller
         }
 
         /// <summary>
+        /// Возвращает объект Детали по полученному имени.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public Part getSelectedPart(string name)
+        {
+            name = name.ToLower();
+            for (int i = 0; i < parts.Count; i++)
+                if (parts[i].Name.ToLower().Equals(name))
+                    return parts[i];
+
+            return null;
+        }
+
+    
+
+
+        /// <summary>
         /// Получение всех деталей нужного типа.
         /// </summary>
         /// <param name="type">Тип.</param>
@@ -53,9 +71,7 @@ namespace ComputerConfigurator.BL.Controller
                 if (parts[i].Type.ToLower().Equals(type))
                     tmp.Add(parts[i]);
 
-            //parts.FindAll(s => s.Type.Equals("match"));
-
-            return tmp;
+            return tmp; 
 
         }
         /// <summary>
@@ -72,8 +88,12 @@ namespace ComputerConfigurator.BL.Controller
             {
                 case "max":
                     return tmp.Last();
+                case "meanmax":
+                    return tmp[tmp.Count / 2 + tmp.Count / 4];
                 case "mean":
                     return tmp[tmp.Count / 2];
+                case "minmean":
+                    return tmp[tmp.Count / 4];
                 case "min":
                     return tmp.First();
                    
@@ -82,6 +102,20 @@ namespace ComputerConfigurator.BL.Controller
             return null;
         }
 
-   
+        public double findFullPrice(string price) 
+        { 
+            double sum = 0;
+            sum += findPrice("Motherboard", price).Price;
+            sum += findPrice("Processor",   price).Price;
+            sum += findPrice("Memory",      price).Price;
+            sum += findPrice("GPU",         price).Price;
+            sum += findPrice("Storage",     price).Price;
+            sum += findPrice("PSU",         price).Price;
+            sum += findPrice("Case",        price).Price;
+
+            return sum;
+        }
+
+
     }
 }

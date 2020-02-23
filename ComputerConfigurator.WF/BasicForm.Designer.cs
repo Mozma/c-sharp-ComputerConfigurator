@@ -29,24 +29,29 @@
         private void InitializeComponent()
         {
             this.startPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.minPriceLabel = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.budgetLabel = new System.Windows.Forms.Label();
+            this.budgetTextBox = new System.Windows.Forms.TextBox();
             this.beginButton = new System.Windows.Forms.Button();
             this.presetsGroupBox = new System.Windows.Forms.GroupBox();
-            this.notebookRadioButton = new System.Windows.Forms.RadioButton();
+            this.forPriceRadioButton = new System.Windows.Forms.RadioButton();
             this.forAPRadioButton = new System.Windows.Forms.RadioButton();
             this.homeRadioButton = new System.Windows.Forms.RadioButton();
             this.officeRadioButton = new System.Windows.Forms.RadioButton();
             this.gameRadioButton = new System.Windows.Forms.RadioButton();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.sumLabel = new System.Windows.Forms.Label();
+            this.casePriceLabel = new System.Windows.Forms.Label();
+            this.psuPriceLabel = new System.Windows.Forms.Label();
+            this.strPriceLabel = new System.Windows.Forms.Label();
+            this.gpuPricelabel = new System.Windows.Forms.Label();
+            this.memPriceLabel = new System.Windows.Forms.Label();
+            this.prPriceLabel = new System.Windows.Forms.Label();
+            this.mbPriceLabel = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.storageLabel = new System.Windows.Forms.Label();
@@ -86,35 +91,55 @@
             // 
             // startPanel
             // 
-            this.startPanel.Controls.Add(this.label1);
-            this.startPanel.Controls.Add(this.textBox1);
+            this.startPanel.Controls.Add(this.minPriceLabel);
+            this.startPanel.Controls.Add(this.label12);
+            this.startPanel.Controls.Add(this.budgetLabel);
+            this.startPanel.Controls.Add(this.budgetTextBox);
             this.startPanel.Controls.Add(this.beginButton);
             this.startPanel.Controls.Add(this.presetsGroupBox);
             this.startPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.startPanel.Location = new System.Drawing.Point(0, 0);
             this.startPanel.Name = "startPanel";
-            this.startPanel.Size = new System.Drawing.Size(470, 98);
+            this.startPanel.Size = new System.Drawing.Size(525, 86);
             this.startPanel.TabIndex = 0;
             // 
-            // label1
+            // minPriceLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Готов потратить:";
+            this.minPriceLabel.AutoSize = true;
+            this.minPriceLabel.Location = new System.Drawing.Point(119, 59);
+            this.minPriceLabel.Name = "minPriceLabel";
+            this.minPriceLabel.Size = new System.Drawing.Size(73, 13);
+            this.minPriceLabel.TabIndex = 6;
+            this.minPriceLabel.Text = "minPriceLabel";
             // 
-            // textBox1
+            // label12
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(7, 59);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(108, 13);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Минимальная цена:";
+            // 
+            // budgetLabel
+            // 
+            this.budgetLabel.AutoSize = true;
+            this.budgetLabel.Location = new System.Drawing.Point(223, 59);
+            this.budgetLabel.Name = "budgetLabel";
+            this.budgetLabel.Size = new System.Drawing.Size(65, 13);
+            this.budgetLabel.TabIndex = 4;
+            this.budgetLabel.Text = "Подобрать:";
+            // 
+            // budgetTextBox
+            // 
+            this.budgetTextBox.Location = new System.Drawing.Point(294, 56);
+            this.budgetTextBox.Name = "budgetTextBox";
+            this.budgetTextBox.Size = new System.Drawing.Size(100, 20);
+            this.budgetTextBox.TabIndex = 3;
             // 
             // beginButton
             // 
-            this.beginButton.Location = new System.Drawing.Point(110, 67);
+            this.beginButton.Location = new System.Drawing.Point(407, 54);
             this.beginButton.Name = "beginButton";
             this.beginButton.Size = new System.Drawing.Size(100, 23);
             this.beginButton.TabIndex = 2;
@@ -124,28 +149,29 @@
             // 
             // presetsGroupBox
             // 
-            this.presetsGroupBox.Controls.Add(this.notebookRadioButton);
+            this.presetsGroupBox.Controls.Add(this.forPriceRadioButton);
             this.presetsGroupBox.Controls.Add(this.forAPRadioButton);
             this.presetsGroupBox.Controls.Add(this.homeRadioButton);
             this.presetsGroupBox.Controls.Add(this.officeRadioButton);
             this.presetsGroupBox.Controls.Add(this.gameRadioButton);
-            this.presetsGroupBox.Location = new System.Drawing.Point(4, 3);
+            this.presetsGroupBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.presetsGroupBox.Location = new System.Drawing.Point(0, 0);
             this.presetsGroupBox.Name = "presetsGroupBox";
-            this.presetsGroupBox.Size = new System.Drawing.Size(456, 47);
+            this.presetsGroupBox.Size = new System.Drawing.Size(525, 47);
             this.presetsGroupBox.TabIndex = 1;
             this.presetsGroupBox.TabStop = false;
-            this.presetsGroupBox.Text = "Готовые сборки";
+            this.presetsGroupBox.Text = "Выбор сборки";
             // 
-            // notebookRadioButton
+            // forPriceRadioButton
             // 
-            this.notebookRadioButton.AutoSize = true;
-            this.notebookRadioButton.Location = new System.Drawing.Point(373, 19);
-            this.notebookRadioButton.Name = "notebookRadioButton";
-            this.notebookRadioButton.Size = new System.Drawing.Size(66, 17);
-            this.notebookRadioButton.TabIndex = 4;
-            this.notebookRadioButton.TabStop = true;
-            this.notebookRadioButton.Text = "Ноутбук";
-            this.notebookRadioButton.UseVisualStyleBackColor = true;
+            this.forPriceRadioButton.AutoSize = true;
+            this.forPriceRadioButton.Location = new System.Drawing.Point(373, 19);
+            this.forPriceRadioButton.Name = "forPriceRadioButton";
+            this.forPriceRadioButton.Size = new System.Drawing.Size(122, 17);
+            this.forPriceRadioButton.TabIndex = 4;
+            this.forPriceRadioButton.TabStop = true;
+            this.forPriceRadioButton.Text = "Подобрать по цене";
+            this.forPriceRadioButton.UseVisualStyleBackColor = true;
             // 
             // forAPRadioButton
             // 
@@ -157,6 +183,7 @@
             this.forAPRadioButton.TabStop = true;
             this.forAPRadioButton.Text = "Для задач АП";
             this.forAPRadioButton.UseVisualStyleBackColor = true;
+            this.forAPRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // homeRadioButton
             // 
@@ -168,6 +195,7 @@
             this.homeRadioButton.TabStop = true;
             this.homeRadioButton.Text = "Для Дома";
             this.homeRadioButton.UseVisualStyleBackColor = true;
+            this.homeRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // officeRadioButton
             // 
@@ -179,6 +207,7 @@
             this.officeRadioButton.TabStop = true;
             this.officeRadioButton.Text = "Для Офиса";
             this.officeRadioButton.UseVisualStyleBackColor = true;
+            this.officeRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // gameRadioButton
             // 
@@ -190,6 +219,7 @@
             this.gameRadioButton.TabStop = true;
             this.gameRadioButton.Text = "Игровой ПК";
             this.gameRadioButton.UseVisualStyleBackColor = true;
+            this.gameRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // mainPanel
             // 
@@ -212,20 +242,23 @@
             this.mainPanel.Controls.Add(this.comboBox2);
             this.mainPanel.Controls.Add(this.comboBox1);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 98);
+            this.mainPanel.Location = new System.Drawing.Point(0, 86);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(470, 270);
+            this.mainPanel.Size = new System.Drawing.Size(525, 235);
             this.mainPanel.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label26);
-            this.panel1.Controls.Add(this.label24);
-            this.panel1.Controls.Add(this.label25);
-            this.panel1.Controls.Add(this.label22);
-            this.panel1.Controls.Add(this.label23);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.sumLabel);
+            this.panel1.Controls.Add(this.casePriceLabel);
+            this.panel1.Controls.Add(this.psuPriceLabel);
+            this.panel1.Controls.Add(this.strPriceLabel);
+            this.panel1.Controls.Add(this.gpuPricelabel);
+            this.panel1.Controls.Add(this.memPriceLabel);
+            this.panel1.Controls.Add(this.prPriceLabel);
+            this.panel1.Controls.Add(this.mbPriceLabel);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.storageLabel);
@@ -243,131 +276,168 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 270);
+            this.panel1.Size = new System.Drawing.Size(525, 235);
             this.panel1.TabIndex = 17;
             // 
-            // label26
+            // label1
             // 
-            this.label26.Location = new System.Drawing.Point(343, 184);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(112, 21);
-            this.label26.TabIndex = 21;
-            this.label26.Text = "Цена";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(120, 207);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 21);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Стоимость сборки:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label24
+            // button1
             // 
-            this.label24.Location = new System.Drawing.Point(343, 158);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(112, 21);
-            this.label24.TabIndex = 20;
-            this.label24.Text = "Цена";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(397, 205);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Офомрмить заказ";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label25
+            // sumLabel
             // 
-            this.label25.Location = new System.Drawing.Point(343, 130);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(112, 21);
-            this.label25.TabIndex = 19;
-            this.label25.Text = "Цена";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sumLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sumLabel.Location = new System.Drawing.Point(276, 207);
+            this.sumLabel.Name = "sumLabel";
+            this.sumLabel.Size = new System.Drawing.Size(112, 21);
+            this.sumLabel.TabIndex = 22;
+            this.sumLabel.Text = "Цена";
+            this.sumLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label22
+            // casePriceLabel
             // 
-            this.label22.Location = new System.Drawing.Point(343, 104);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(112, 21);
-            this.label22.TabIndex = 18;
-            this.label22.Text = "Цена";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.casePriceLabel.Location = new System.Drawing.Point(392, 170);
+            this.casePriceLabel.Name = "casePriceLabel";
+            this.casePriceLabel.Size = new System.Drawing.Size(115, 21);
+            this.casePriceLabel.TabIndex = 21;
+            this.casePriceLabel.Text = "Цена";
+            this.casePriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label23
+            // psuPriceLabel
             // 
-            this.label23.Location = new System.Drawing.Point(343, 76);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(112, 21);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "Цена";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.psuPriceLabel.Location = new System.Drawing.Point(392, 144);
+            this.psuPriceLabel.Name = "psuPriceLabel";
+            this.psuPriceLabel.Size = new System.Drawing.Size(115, 21);
+            this.psuPriceLabel.TabIndex = 20;
+            this.psuPriceLabel.Text = "Цена";
+            this.psuPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label12
+            // strPriceLabel
             // 
-            this.label12.Location = new System.Drawing.Point(343, 49);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(112, 21);
-            this.label12.TabIndex = 16;
-            this.label12.Text = "Цена";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.strPriceLabel.Location = new System.Drawing.Point(392, 116);
+            this.strPriceLabel.Name = "strPriceLabel";
+            this.strPriceLabel.Size = new System.Drawing.Size(115, 21);
+            this.strPriceLabel.TabIndex = 19;
+            this.strPriceLabel.Text = "Цена";
+            this.strPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label13
+            // gpuPricelabel
             // 
-            this.label13.Location = new System.Drawing.Point(343, 21);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(112, 21);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Цена";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gpuPricelabel.Location = new System.Drawing.Point(392, 90);
+            this.gpuPricelabel.Name = "gpuPricelabel";
+            this.gpuPricelabel.Size = new System.Drawing.Size(115, 21);
+            this.gpuPricelabel.TabIndex = 18;
+            this.gpuPricelabel.Text = "Цена";
+            this.gpuPricelabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // memPriceLabel
+            // 
+            this.memPriceLabel.Location = new System.Drawing.Point(392, 62);
+            this.memPriceLabel.Name = "memPriceLabel";
+            this.memPriceLabel.Size = new System.Drawing.Size(115, 21);
+            this.memPriceLabel.TabIndex = 17;
+            this.memPriceLabel.Text = "Цена";
+            this.memPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // prPriceLabel
+            // 
+            this.prPriceLabel.Location = new System.Drawing.Point(392, 35);
+            this.prPriceLabel.Name = "prPriceLabel";
+            this.prPriceLabel.Size = new System.Drawing.Size(115, 21);
+            this.prPriceLabel.TabIndex = 16;
+            this.prPriceLabel.Text = "Цена";
+            this.prPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // mbPriceLabel
+            // 
+            this.mbPriceLabel.Location = new System.Drawing.Point(392, 7);
+            this.mbPriceLabel.Name = "mbPriceLabel";
+            this.mbPriceLabel.Size = new System.Drawing.Size(115, 21);
+            this.mbPriceLabel.TabIndex = 15;
+            this.mbPriceLabel.Text = "Цена";
+            this.mbPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label15
             // 
-            this.label15.Location = new System.Drawing.Point(7, 183);
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(16, 173);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(127, 21);
+            this.label15.Size = new System.Drawing.Size(46, 13);
             this.label15.TabIndex = 13;
             this.label15.Text = "Корпус:";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(7, 157);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(16, 147);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(127, 21);
+            this.label16.Size = new System.Drawing.Size(79, 13);
             this.label16.TabIndex = 12;
             this.label16.Text = "Блок питания:";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // storageLabel
             // 
-            this.storageLabel.Location = new System.Drawing.Point(7, 130);
+            this.storageLabel.AutoSize = true;
+            this.storageLabel.Location = new System.Drawing.Point(16, 120);
             this.storageLabel.Name = "storageLabel";
-            this.storageLabel.Size = new System.Drawing.Size(127, 21);
+            this.storageLabel.Size = new System.Drawing.Size(37, 13);
             this.storageLabel.TabIndex = 11;
             this.storageLabel.Text = "Диск:";
             this.storageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label18
             // 
-            this.label18.Location = new System.Drawing.Point(7, 103);
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(16, 93);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(127, 21);
+            this.label18.Size = new System.Drawing.Size(70, 13);
             this.label18.TabIndex = 10;
             this.label18.Text = "Видеокарта:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label19
             // 
-            this.label19.Location = new System.Drawing.Point(7, 76);
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(16, 66);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(127, 21);
+            this.label19.Size = new System.Drawing.Size(117, 13);
             this.label19.TabIndex = 9;
             this.label19.Text = "Оперативная память:";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label20
             // 
-            this.label20.Location = new System.Drawing.Point(7, 48);
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(16, 38);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(127, 21);
+            this.label20.Size = new System.Drawing.Size(66, 13);
             this.label20.TabIndex = 8;
             this.label20.Text = "Процессор:";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // motherboardLabel
             // 
-            this.motherboardLabel.Location = new System.Drawing.Point(7, 22);
+            this.motherboardLabel.AutoSize = true;
+            this.motherboardLabel.Location = new System.Drawing.Point(16, 12);
             this.motherboardLabel.Name = "motherboardLabel";
-            this.motherboardLabel.Size = new System.Drawing.Size(127, 21);
+            this.motherboardLabel.Size = new System.Drawing.Size(110, 13);
             this.motherboardLabel.TabIndex = 7;
             this.motherboardLabel.Text = "Материнская плата:";
             this.motherboardLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -375,58 +445,65 @@
             // caseComboBox
             // 
             this.caseComboBox.FormattingEnabled = true;
-            this.caseComboBox.Location = new System.Drawing.Point(140, 184);
+            this.caseComboBox.Location = new System.Drawing.Point(137, 170);
             this.caseComboBox.Name = "caseComboBox";
-            this.caseComboBox.Size = new System.Drawing.Size(197, 21);
+            this.caseComboBox.Size = new System.Drawing.Size(252, 21);
             this.caseComboBox.TabIndex = 6;
+            this.caseComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // PSUComboBox
             // 
             this.PSUComboBox.FormattingEnabled = true;
-            this.PSUComboBox.Location = new System.Drawing.Point(140, 157);
+            this.PSUComboBox.Location = new System.Drawing.Point(137, 143);
             this.PSUComboBox.Name = "PSUComboBox";
-            this.PSUComboBox.Size = new System.Drawing.Size(197, 21);
+            this.PSUComboBox.Size = new System.Drawing.Size(252, 21);
             this.PSUComboBox.TabIndex = 5;
+            this.PSUComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // storageComboBox
             // 
             this.storageComboBox.FormattingEnabled = true;
-            this.storageComboBox.Location = new System.Drawing.Point(140, 130);
+            this.storageComboBox.Location = new System.Drawing.Point(137, 116);
             this.storageComboBox.Name = "storageComboBox";
-            this.storageComboBox.Size = new System.Drawing.Size(197, 21);
+            this.storageComboBox.Size = new System.Drawing.Size(252, 21);
             this.storageComboBox.TabIndex = 4;
+            this.storageComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // GPUComboBox
             // 
             this.GPUComboBox.FormattingEnabled = true;
-            this.GPUComboBox.Location = new System.Drawing.Point(140, 103);
+            this.GPUComboBox.Location = new System.Drawing.Point(137, 89);
             this.GPUComboBox.Name = "GPUComboBox";
-            this.GPUComboBox.Size = new System.Drawing.Size(197, 21);
+            this.GPUComboBox.Size = new System.Drawing.Size(252, 21);
             this.GPUComboBox.TabIndex = 3;
+            this.GPUComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // memoryComboBox
             // 
             this.memoryComboBox.FormattingEnabled = true;
-            this.memoryComboBox.Location = new System.Drawing.Point(140, 76);
+            this.memoryComboBox.Location = new System.Drawing.Point(137, 62);
             this.memoryComboBox.Name = "memoryComboBox";
-            this.memoryComboBox.Size = new System.Drawing.Size(197, 21);
+            this.memoryComboBox.Size = new System.Drawing.Size(252, 21);
             this.memoryComboBox.TabIndex = 2;
+            this.memoryComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // processorComboBox
             // 
             this.processorComboBox.FormattingEnabled = true;
-            this.processorComboBox.Location = new System.Drawing.Point(140, 49);
+            this.processorComboBox.Location = new System.Drawing.Point(137, 35);
             this.processorComboBox.Name = "processorComboBox";
-            this.processorComboBox.Size = new System.Drawing.Size(197, 21);
+            this.processorComboBox.Size = new System.Drawing.Size(252, 21);
             this.processorComboBox.TabIndex = 1;
+            this.processorComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // motherboardComboBox
             // 
             this.motherboardComboBox.FormattingEnabled = true;
-            this.motherboardComboBox.Location = new System.Drawing.Point(140, 22);
+            this.motherboardComboBox.Location = new System.Drawing.Point(137, 8);
             this.motherboardComboBox.Name = "motherboardComboBox";
-            this.motherboardComboBox.Size = new System.Drawing.Size(197, 21);
+            this.motherboardComboBox.Size = new System.Drawing.Size(252, 21);
             this.motherboardComboBox.TabIndex = 0;
+            this.motherboardComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -578,18 +655,25 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 368);
+            this.ClientSize = new System.Drawing.Size(525, 321);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.startPanel);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "BasicForm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Компьютерный конфигуратор";
+            this.Load += new System.EventHandler(this.BasicForm_Load);
             this.startPanel.ResumeLayout(false);
             this.startPanel.PerformLayout();
             this.presetsGroupBox.ResumeLayout(false);
             this.presetsGroupBox.PerformLayout();
             this.mainPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -598,13 +682,13 @@
 
         private System.Windows.Forms.Panel startPanel;
         private System.Windows.Forms.GroupBox presetsGroupBox;
-        private System.Windows.Forms.RadioButton notebookRadioButton;
+        private System.Windows.Forms.RadioButton forPriceRadioButton;
         private System.Windows.Forms.RadioButton forAPRadioButton;
         private System.Windows.Forms.RadioButton homeRadioButton;
         private System.Windows.Forms.RadioButton officeRadioButton;
         private System.Windows.Forms.RadioButton gameRadioButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label budgetLabel;
+        private System.Windows.Forms.TextBox budgetTextBox;
         private System.Windows.Forms.Button beginButton;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.ComboBox comboBox6;
@@ -614,13 +698,13 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label casePriceLabel;
+        private System.Windows.Forms.Label psuPriceLabel;
+        private System.Windows.Forms.Label strPriceLabel;
+        private System.Windows.Forms.Label gpuPricelabel;
+        private System.Windows.Forms.Label memPriceLabel;
+        private System.Windows.Forms.Label prPriceLabel;
+        private System.Windows.Forms.Label mbPriceLabel;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label storageLabel;
@@ -646,6 +730,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.Label sumLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label minPriceLabel;
+        private System.Windows.Forms.Label label12;
     }
 }
 

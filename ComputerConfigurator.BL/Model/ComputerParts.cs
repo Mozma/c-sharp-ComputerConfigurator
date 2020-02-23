@@ -1,5 +1,5 @@
 ﻿using ComputerConfigurator.BL.Controller;
-
+using System;
 using System.Collections.Generic;
 
 namespace ComputerConfigurator.BL.Model
@@ -17,6 +17,7 @@ namespace ComputerConfigurator.BL.Model
         public Part Storage { get; set; }
         public Part PSU { get; set; }
         public Part Case { get; set; }
+        public double Price { get; set; }
 
         public ComputerParts()
         {
@@ -29,7 +30,13 @@ namespace ComputerConfigurator.BL.Model
             Storage     = parts.getPart("Storage");
             PSU         = parts.getPart("PSU");
             Case        = parts.getPart("Case");
+
+            Price = getPrice();
         }
 
+        internal double getPrice()
+        {
+            return Motherboard.Price + Processor.Price + Memory.Price + Storage.Price + GPU.Price + PSU.Price + Case.Price;
+        }
     }
 }

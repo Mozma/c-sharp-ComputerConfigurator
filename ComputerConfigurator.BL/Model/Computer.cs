@@ -10,12 +10,13 @@ namespace ComputerConfigurator.BL.Model
         /// Имя комплектации компьютера.
         /// </summary>
         public string Name { get; set; }
+
         /// <summary>
-        /// Тип компьютера.
+        /// Желаемая цена комплектации.
         /// </summary>
-        private ComputerType Type { get; set; }
+        public double wantedPrice { get; set; }
         /// <summary>
-        /// Общая цена выбранной комплектации.
+        /// Общая цена деталей.
         /// </summary>
         public double Price { get; set; }
         /// <summary>
@@ -28,17 +29,16 @@ namespace ComputerConfigurator.BL.Model
         public Computer(string type, double price)
         {
             Name = Guid.NewGuid().ToString().Substring(0,8);
-            Type = new ComputerType(type);
-            Price = price;
-
+           // Type = new ComputerType(type);
+            wantedPrice = price;
             Parts = new ComputerParts();
+
+            Price = Parts.getPrice();
         }
-
-
 
         public override string ToString()
         {
-            return $"{Name} - {Type} ПК по цене {Price}";
+            return $"{Name} - ПК по цене {Price}";
         }
     }
 }
