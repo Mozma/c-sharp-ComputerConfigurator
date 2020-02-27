@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.startPanel = new System.Windows.Forms.Panel();
             this.minPriceLabel = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -83,10 +84,13 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showAllPartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startPanel.SuspendLayout();
             this.presetsGroupBox.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // startPanel
@@ -249,6 +253,7 @@
             // 
             // panel1
             // 
+            this.panel1.ContextMenuStrip = this.contextMenuStrip1;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.sumLabel);
@@ -651,6 +656,20 @@
             this.comboBox1.Size = new System.Drawing.Size(197, 21);
             this.comboBox1.TabIndex = 0;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showAllPartToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(203, 26);
+            // 
+            // showAllPartToolStripMenuItem
+            // 
+            this.showAllPartToolStripMenuItem.Name = "showAllPartToolStripMenuItem";
+            this.showAllPartToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.showAllPartToolStripMenuItem.Text = "Посмотреть все детали";
+            this.showAllPartToolStripMenuItem.Click += new System.EventHandler(this.showAllPartToolStripMenuItem_Click);
+            // 
             // BasicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,6 +693,7 @@
             this.mainPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -735,6 +755,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label minPriceLabel;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem showAllPartToolStripMenuItem;
     }
 }
 

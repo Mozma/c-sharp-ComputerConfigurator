@@ -25,13 +25,5 @@ namespace ComputerConfigurator.BL.Model
             LowPrice        = parts.findFullPrice("min");
         }
 
-        //public Price(double highPrice, double mediumHighPrice, double mediumPrice, double lowMediumhPrice, double lowPrice)
-        //{
-        //    HighPrice = highPrice;
-        //    MediumHighPrice = mediumHighPrice;
-        //    MediumPrice = mediumPrice;
-        //    LowMediumhPrice = lowMediumhPrice;
-        //    LowPrice = lowPrice;
-        //}
     }
 }

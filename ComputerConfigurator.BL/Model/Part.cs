@@ -39,7 +39,10 @@ namespace ComputerConfigurator.BL.Model
             Price = price;
         }
 
-
+        /// <summary>
+        /// Возвращает полный список деталей.
+        /// </summary>
+        /// <returns></returns>
         public static List<Part> getList()
         {
             if (parts.Count < 1)
@@ -48,8 +51,14 @@ namespace ComputerConfigurator.BL.Model
             return parts;
         }
 
+        /// <summary>
+        /// Создание исходных данных.
+        /// </summary>
         private static void createNewData()
         {
+            //TODO: Переписать с использованием таблиц. Сделать ввод из файла или БД.
+
+
             // Материнская плата.
             parts.Add(new Part("Motherboard", "MSI H110M PRO-VD",             5632));
             parts.Add(new Part("Motherboard", "ASUS PRIME Z390-A",            13360));

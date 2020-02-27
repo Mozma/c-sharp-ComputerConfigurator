@@ -1,11 +1,7 @@
-﻿
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using ComputerConfigurator.BL.Model;
+
 namespace ComputerConfigurator.BL.Controller
 {
     public class PartController
@@ -102,6 +98,12 @@ namespace ComputerConfigurator.BL.Controller
             return null;
         }
 
+
+        /// <summary>
+        /// Возвращает полную цену всех деталей по заданному типу цены.
+        /// </summary>
+        /// <param name="price"></param>
+        /// <returns></returns>
         public double findFullPrice(string price) 
         { 
             double sum = 0;

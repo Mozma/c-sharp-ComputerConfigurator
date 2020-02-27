@@ -18,6 +18,9 @@ namespace ComputerConfigurator.BL.Controller
             CurrentPC = new Computer(type, price);
         }
 
+        /// <summary>
+        /// Пересчитывает цену текущего компьютера.
+        /// </summary>
         public void update()
         {
             CurrentPC.Price = CurrentPC.Parts.getPrice();

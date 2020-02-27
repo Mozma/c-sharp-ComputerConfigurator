@@ -34,6 +34,11 @@ namespace ComputerConfigurator.BL.Model
             Price = getPrice();
         }
 
+
+        /// <summary>
+        /// Возвращает общую стоимость всех деталей.
+        /// </summary>
+        /// <returns></returns>
         internal double getPrice()
         {
             return Motherboard.Price + Processor.Price + Memory.Price + Storage.Price + GPU.Price + PSU.Price + Case.Price;

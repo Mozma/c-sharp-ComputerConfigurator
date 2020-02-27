@@ -1,7 +1,6 @@
 ﻿using ComputerConfigurator.BL.Controller;
 using ComputerConfigurator.BL.Model;
 using System;
-using System.Device.Location;
 using System.Windows.Forms;
 
 namespace ComputerConfigurator.WF
@@ -12,18 +11,19 @@ namespace ComputerConfigurator.WF
         {
             InitializeComponent();
             
-            fillComboBoxes();
-           
+            fillComboBoxes();  
         }
+
+
         private void BasicForm_Load(object sender, EventArgs e)
         {
             Price pr = new Price();
             minPriceLabel.Text = String.Format("{0:C}", pr.LowPrice);
         }
-        
-        
-        
-        //min.pr.LowPrice.ToString();
+
+
+
+        tableForm newForm;
         ComputerController computer = new ComputerController("null", 0);
         PartController partctrl = new PartController();
 
@@ -222,7 +222,27 @@ namespace ComputerConfigurator.WF
                           );
         }
 
-        
+        /// <summary>
+        /// Показывает в новом окне все детали доступные в программе.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void showAllPartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (newForm != null && !newForm.IsDisposed && newForm.Visible)
+                return;
+
+            if (newForm == null)
+                newForm = new tableForm();
+
+            if (newForm.IsDisposed)
+                newForm = new tableForm();
+
+            newForm.Show();
+
+             
+            //newForm.Show();
+        }
     }
 
 }

@@ -29,7 +29,6 @@ namespace ComputerConfigurator.BL.Model
         public Computer(string type, double price)
         {
             Name = Guid.NewGuid().ToString().Substring(0,8);
-           // Type = new ComputerType(type);
             wantedPrice = price;
             Parts = new ComputerParts();
 
