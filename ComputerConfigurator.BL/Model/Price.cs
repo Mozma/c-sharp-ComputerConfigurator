@@ -1,9 +1,4 @@
 ﻿using ComputerConfigurator.BL.Controller;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ComputerConfigurator.BL.Model
 {
@@ -21,7 +16,7 @@ namespace ComputerConfigurator.BL.Model
             HighPrice       = parts.findFullPrice("max");
             MediumHighPrice = parts.findFullPrice("meanMax");
             MediumPrice     = parts.findFullPrice("mean");
-            LowMediumPrice = parts.findFullPrice("minMean");
+            LowMediumPrice  = parts.findFullPrice("minMean");
             LowPrice        = parts.findFullPrice("min");
         }
 

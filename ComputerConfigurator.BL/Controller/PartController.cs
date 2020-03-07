@@ -24,14 +24,9 @@ namespace ComputerConfigurator.BL.Controller
         {
             type = type.ToLower();
 
-            for (int i = 0; i < parts.Count; i++)
-                if (parts[i].Type.ToLower().Equals(type))
-                {
-                    return parts[i];
-                }
+            var tmp = parts.Find(x => x.Type.ToLower().Equals(type));
 
-            return null;
-
+            return tmp;
         }
 
         /// <summary>
@@ -41,16 +36,15 @@ namespace ComputerConfigurator.BL.Controller
         /// <returns></returns>
         public Part getSelectedPart(string name)
         {
+
             name = name.ToLower();
-            for (int i = 0; i < parts.Count; i++)
-                if (parts[i].Name.ToLower().Equals(name))
-                    return parts[i];
 
-            return null;
+            var tmp = from part in parts
+                      where part.Name.ToLower() == name
+                      select part;
+
+            return tmp.Single();
         }
-
-    
-
 
         /// <summary>
         /// Получение всех деталей нужного типа.
@@ -59,15 +53,14 @@ namespace ComputerConfigurator.BL.Controller
         /// <returns></returns>
         public List<Part> getAllPartsOfOneType(string type)
         {
+
             type = type.ToLower();
+            var tmp = from part in parts
+                      where part.Type.ToLower() == type
+                      orderby part.Price ascending
+                      select part;
 
-            List<Part> tmp = new List<Part>(10);
-
-            for (int i = 0; i < parts.Count; i++)
-                if (parts[i].Type.ToLower().Equals(type))
-                    tmp.Add(parts[i]);
-
-            return tmp; 
+            return tmp.ToList(); 
 
         }
         /// <summary>
@@ -78,7 +71,7 @@ namespace ComputerConfigurator.BL.Controller
         /// <returns></returns>
         public  Part findPrice(string type , string price)
         {
-            var tmp = getAllPartsOfOneType(type).OrderBy(o => o.Price).ToList();
+            var tmp = getAllPartsOfOneType(type);
 
             switch (price.ToLower())
             {

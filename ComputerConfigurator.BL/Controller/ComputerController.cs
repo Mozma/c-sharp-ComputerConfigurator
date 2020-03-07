@@ -36,15 +36,32 @@ namespace ComputerConfigurator.BL.Controller
             string result;
 
 
-            result = $"\tКорпус:           \t{CurrentPC.Parts.Case.Name} - "        + String.Format("{0:C}", CurrentPC.Parts.Case.Price)        + "\n" +
-                     $"\tПроцессор:        \t{CurrentPC.Parts.Processor.Name} - "   + String.Format("{0:C}", CurrentPC.Parts.Processor.Price)   + "\n" +
-                     $"\tОперативка:       \t{CurrentPC.Parts.Memory.Name} - "      + String.Format("{0:C}", CurrentPC.Parts.Memory.Price)      + "\n" +
-                     $"\tМатеринская плата:\t{CurrentPC.Parts.Motherboard.Name} - " + String.Format("{0:C}", CurrentPC.Parts.Motherboard.Price) + "\n" +
-                     $"\tGPU:              \t{CurrentPC.Parts.GPU.Name} - "         + String.Format("{0:C}", CurrentPC.Parts.GPU.Price)         + "\n" +
-                     $"\tПамять:           \t{CurrentPC.Parts.Storage.Name} - "     + String.Format("{0:C}", CurrentPC.Parts.Storage.Price)     + "\n" +
-                     $"\tБлок питания:     \t{CurrentPC.Parts.PSU.Name} - "         + String.Format("{0:C}", CurrentPC.Parts.PSU.Price)         + "\n";
+            //result = $"\tКорпус:           \t{CurrentPC.Parts.Case.Name} - "        + String.Format("{0:C}", CurrentPC.Parts.Case.Price)        + "\n" +
+            //         $"\tПроцессор:        \t{CurrentPC.Parts.Processor.Name} - "   + String.Format("{0:C}", CurrentPC.Parts.Processor.Price)   + "\n" +
+            //         $"\tОперативка:       \t{CurrentPC.Parts.Memory.Name} - "      + String.Format("{0:C}", CurrentPC.Parts.Memory.Price)      + "\n" +
+            //         $"\tМатеринская плата:\t{CurrentPC.Parts.Motherboard.Name} - " + String.Format("{0:C}", CurrentPC.Parts.Motherboard.Price) + "\n" +
+            //         $"\tGPU:              \t{CurrentPC.Parts.GPU.Name} - "         + String.Format("{0:C}", CurrentPC.Parts.GPU.Price)         + "\n" +
+            //         $"\tПамять:           \t{CurrentPC.Parts.Storage.Name} - "     + String.Format("{0:C}", CurrentPC.Parts.Storage.Price)     + "\n" +
+            //         $"\tБлок питания:     \t{CurrentPC.Parts.PSU.Name} - "         + String.Format("{0:C}", CurrentPC.Parts.PSU.Price)         + "\n";
 
-                
+
+            //result = String.Format("\t{0,-20}\t{1,-25} - {2,-7:C}\n", "Корпус:",            CurrentPC.Parts.Case.Name,        CurrentPC.Parts.Case.Price) +
+            //         String.Format("\t{0,-20}\t{1,-25} - {2,-7:C}\n", "Процессор:",         CurrentPC.Parts.Processor.Name,   CurrentPC.Parts.Processor.Price) +
+            //         String.Format("\t{0,-20}\t{1,-25} - {2,-7:C}\n", "Оперативка:",        CurrentPC.Parts.Memory.Name,      CurrentPC.Parts.Memory.Price) +
+            //         String.Format("\t{0,-20}\t{1,-25} - {2,-7:C}\n", "Материнская плата:", CurrentPC.Parts.Motherboard.Name, CurrentPC.Parts.Motherboard.Price) +
+            //         String.Format("\t{0,-20}\t{1,-25} - {2,-7:C}\n", "GPU:",               CurrentPC.Parts.GPU.Name,         CurrentPC.Parts.GPU.Price) +
+            //         String.Format("\t{0,-20}\t{1,-25} - {2,-7:C}\n", "Память:",            CurrentPC.Parts.Storage.Name,     CurrentPC.Parts.Storage.Price) +
+            //         String.Format("\t{0,-20}\t{1,-25} - {2,-7:C}\n", "Блок питания:",      CurrentPC.Parts.PSU.Name,         CurrentPC.Parts.PSU.Price);
+            result = String.Format("\t{0} {1}\n", "Корпус:", CurrentPC.Parts.Case.Name) +
+                     String.Format("\t{0} {1}\n", "Процессор:", CurrentPC.Parts.Processor.Name) +
+                     String.Format("\t{0} {1}\n", "Оперативка:", CurrentPC.Parts.Memory.Name) +
+                     String.Format("\t{0} {1}\n", "Материнская плата:", CurrentPC.Parts.Motherboard.Name) +
+                     String.Format("\t{0} {1}\n", "GPU:", CurrentPC.Parts.GPU.Name) +
+                     String.Format("\t{0} {1}\n", "Память:", CurrentPC.Parts.Storage.Name) +
+                     String.Format("\t{0} {1}\n", "Блок питания:", CurrentPC.Parts.PSU.Name);
+
+
+
             return result;
         }
 

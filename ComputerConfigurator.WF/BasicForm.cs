@@ -215,11 +215,12 @@ namespace ComputerConfigurator.WF
         {
             MessageBox.Show(String.Format(
                           $"Код трекера: {computer.CurrentPC.Name}.\n" +
-                          $"\t К оплате: {String.Format("{0:C}",computer.CurrentPC.Price)}\n"+
-                          $"\t Доставка: Пункт выдачи м. Шаболовская.\n"+
-                          $"\t Примерная дата доставки: {DateTime.Now.AddDays(7).ToString().Substring(0,10)}"),
+                          $"\n{computer.printFullInfo()}\n" +
+                          $"\t К оплате: {String.Format("{0:C}", computer.CurrentPC.Price)}\n" +
+                          $"\t Доставка: Пункт выдачи м. Шаболовская.\n" +
+                          $"\t Примерная дата доставки: {DateTime.Now.AddDays(7).ToString().Substring(0, 10)}"),
                           "Информация о заказе"
-                          );
+                          ) ;
         }
 
         /// <summary>
